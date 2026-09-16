@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>Para Lara ❤️</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255, 60, 130, 0.25),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(150, 0, 70, 0.30),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #080006,
+                    #25000e,
+                    #610024,
+                    #140007
+                );
+
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 15px;
+        }
+
+
+        /* =========================
+           ESTRELAS
+        ========================= */
+
+        .estrelas {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 0;
+        }
+
+
+        .estrela {
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            opacity: 0.7;
+
+            animation:
+                piscar
+                2s
+                infinite
+                alternate;
+        }
+
+
+        @keyframes piscar {
+
+            from {
+                opacity: 0.2;
+
+                transform:
+                    scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    scale(1.4);
+            }
+
+        }
+
+
+        /* =========================
+           CORAÇÕES
+        ========================= */
+
+        .coracoes {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 1;
+        }
+
+
+        .coracao {
+            position: absolute;
+
+            bottom: -60px;
+
+            animation:
+                subir
+                linear
+                forwards;
+
+            opacity: 0.85;
+
+            filter:
+                drop-shadow(
+                    0 0 8px
+                    rgba(255, 50, 120, 0.8)
+                );
+        }
+
+
+        @keyframes subir {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-115vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================
+           CARTÃO
+        ========================= */
+
+        .container {
+            position: relative;
+
+            z-index: 10;
+
+            width: 100%;
+
+            max-width: 650px;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            padding: 35px 25px;
+
+            background:
+                rgba(15, 0, 8, 0.72);
+
+            border:
+                1px solid
+                rgba(255, 170, 200, 0.25);
+
+            border-radius: 30px;
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            box-shadow:
+                0 0 30px
+                rgba(255, 0, 100, 0.18),
+
+                0 20px 70px
+                rgba(0, 0, 0, 0.65);
+
+            animation:
+                aparecer
+                1s
+                ease;
+        }
+
+
+        /* IMPORTANTE:
+           A tela final começa escondida
+        */
+
+        #mensagem-final {
+            display: none;
+        }
+
+
+        /* =========================
+           CORAÇÃO PRINCIPAL
+        ========================= */
+
+        .coracao-principal {
+            font-size: 70px;
+
+            margin-bottom: 15px;
+
+            filter:
+                drop-shadow(
+                    0 0 20px
+                    #ff2f70
+                );
+
+            animation:
+                pulsar
+                1.5s
+                infinite;
+        }
+
+
+        @keyframes pulsar {
+
+            0%,
+            100% {
+                transform:
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    scale(1.15);
+            }
+
+        }
+
+
+        /* =========================
+           TEXTOS
+        ========================= */
+
+        h1 {
+            font-size: 45px;
+
+            margin-bottom: 18px;
+
+            color: white;
+
+            text-shadow:
+                0 0 10px #ff477f,
+                0 0 30px #ff174f;
+        }
+
+
+        h2 {
+            font-size: 25px;
+
+            margin-bottom: 25px;
+
+            font-weight: normal;
+
+            color: #ffdce8;
+        }
+
+
+        p {
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+
+            color: #fff0f5;
+        }
+
+
+        .destaque {
+            color: #ff9fbd;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 0 10px
+                rgba(255, 100, 150, 0.5);
+        }
+
+
+        .pergunta {
+            font-size: 30px;
+
+            font-weight: bold;
+
+            margin: 28px 0;
+        }
+
+
+        /* =========================
+           BOTÕES
+        ========================= */
+
+        .botoes {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 25px;
+        }
+
+
+        button {
+            border: none;
+
+            padding:
+                15px 30px;
+
+            border-radius: 50px;
+
+            font-size: 17px;
+
+            font-family: inherit;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+
+            -webkit-tap-highlight-color:
+                transparent;
+
+            touch-action:
+                manipulation;
+        }
+
+
+        #sim {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff1654,
+                    #ff4f88
+                );
+
+            color: white;
+
+            box-shadow:
+                0 0 20px
+                rgba(255, 22, 84, 0.5);
+        }
+
+
+        #sim:hover {
+            transform:
+                scale(1.08);
+
+            box-shadow:
+                0 0 35px
+                rgba(255, 22, 84, 0.8);
+        }
+
+
+        #sim:active {
+            transform:
+                scale(0.95);
+        }
+
+
+        #nao {
+            background: white;
+
+            color: #a6003d;
+
+            box-shadow:
+                0 0 15px
+                rgba(255, 255, 255, 0.2);
+        }
+
+
+        #nao:hover {
+            transform:
+                scale(1.05);
+        }
+
+
+        #nao:active {
+            transform:
+                scale(0.95);
+        }
+
+
+        /* =========================
+           ANIMAÇÃO DO CARTÃO
+        ========================= */
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(30px)
+                    scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 12px;
+            }
+
+
+            .container {
+                width: 100%;
+
+                max-width: 100%;
+
+                max-height: 94vh;
+
+                padding:
+                    28px 20px;
+
+                border-radius:
+                    25px;
+            }
+
+
+            .coracao-principal {
+                font-size: 58px;
+            }
+
+
+            h1 {
+                font-size: 36px;
+            }
+
+
+            h2 {
+                font-size: 21px;
+            }
+
+
+            p {
+                font-size: 17px;
+
+                line-height: 1.65;
+            }
+
+
+            .pergunta {
+                font-size: 25px;
+
+                margin:
+                    25px 0;
+            }
+
+
+            .botoes {
+                gap: 12px;
+            }
+
+
+            button {
+                padding:
+                    14px 27px;
+
+                font-size: 16px;
+            }
+
+        }
+
+
+        /* =========================
+           CELULAR PEQUENO
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .container {
+                padding:
+                    24px 17px;
+            }
+
+
+            .coracao-principal {
+                font-size: 50px;
+            }
+
+
+            h1 {
+                font-size: 32px;
+            }
+
+
+            h2 {
+                font-size: 19px;
+            }
+
+
+            p {
+                font-size: 16px;
+            }
+
+
+            .pergunta {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ESTRELAS -->
+
+    <div
+        class="estrelas"
+        id="estrelas">
+    </div>
+
+
+    <!-- CORAÇÕES -->
+
+    <div
+        class="coracoes"
+        id="coracoes">
+    </div>
+
+
+    <!-- =========================
+         PEDIDO
+    ========================== -->
+
+    <main
+        class="container"
+        id="inicio">
+
+
+        <div class="coracao-principal">
+            ❤️
+        </div>
+
+
+        <h1>
+            Lara...
+        </h1>
+
+
+        <h2>
+            Eu preciso te contar uma coisa.
+        </h2>
+
+
+        <p>
+
+            Desde que você entrou na minha vida,
+            algumas coisas começaram a fazer mais sentido.
+
+        </p>
+
+
+        <p>
+
+            Seu sorriso consegue deixar meus dias melhores,
+            sua presença torna momentos simples especiais,
+            e, de alguma forma, você conseguiu ocupar
+            um espaço muito especial no meu coração.
+
+        </p>
+
+
+        <p>
+
+            Eu não sei exatamente como explicar tudo o que sinto,
+            mas sei que quando penso em alguém com quem gostaria
+            de compartilhar momentos, risadas, conversas,
+            sonhos e lembranças...
+
+        </p>
+
+
+        <p class="destaque">
+
+            É você que vem na minha cabeça.
+
+        </p>
+
+
+        <div class="pergunta">
+
+            Lara, quer namorar comigo? ❤️
+
+        </div>
+
+
+        <div class="botoes">
+
+
+            <button id="sim">
+                SIM ❤️
+            </button>
+
+
+            <button id="nao">
+                NÃO
+            </button>
+
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================
+         RESPOSTA
+    ========================== -->
+
+    <main
+        class="container"
+        id="mensagem-final">
+
+
+        <div
+            class="coracao-principal"
+            id="icone-final">
+
+            💖
+
+        </div>
+
+
+        <h1 id="titulo-final">
+            Eu sabia! ❤️
+        </h1>
+
+
+        <p id="texto-final">
+
+            Lara, obrigado por escolher viver
+            esse momento comigo.
+
+        </p>
+
+
+        <p id="texto-final-2">
+
+            Espero que a gente possa construir juntos
+            muitas histórias, momentos inesquecíveis,
+            risadas e memórias que vamos guardar
+            para sempre.
+
+        </p>
+
+
+        <p
+            class="destaque"
+            id="destaque-final">
+
+            Que esse seja apenas o começo
+            da nossa história. ❤️
+
+        </p>
+
+
+        <h2 id="mensagem-extra">
+
+            Eu gosto muito de você, Lara. ❤️
+
+        </h2>
+
+
+    </main>
+
+
+    <script>
+
+
+        /* =========================
+           CORAÇÕES
+        ========================== */
+
+
+        const areaCoracoes =
+            document.getElementById(
+                "coracoes"
+            );
+
+
+        function criarCoracao() {
+
+            const coracao =
+                document.createElement(
+                    "div"
+                );
+
+
+            coracao.classList.add(
+                "coracao"
+            );
+
+
+            const simbolos = [
+
+                "❤️",
+                "💕",
+                "💖",
+                "💗",
+                "💓",
+                "💘"
+
+            ];
+
+
+            coracao.innerHTML =
+                simbolos[
+                    Math.floor(
+                        Math.random() *
+                        simbolos.length
+                    )
+                ];
+
+
+            coracao.style.left =
+                Math.random() * 100 +
+                "vw";
+
+
+            coracao.style.fontSize =
+                (
+                    15 +
+                    Math.random() * 30
+                ) + "px";
+
+
+            coracao.style.animationDuration =
+                (
+                    4 +
+                    Math.random() * 5
+                ) + "s";
+
+
+            areaCoracoes.appendChild(
+                coracao
+            );
+
+
+            setTimeout(
+                function() {
+
+                    coracao.remove();
+
+                },
+                9000
+            );
+
+        }
+
+
+        setInterval(
+            criarCoracao,
+            350
+        );
+
+
+        /* =========================
+           ESTRELAS
+        ========================== */
+
+
+        const estrelas =
+            document.getElementById(
+                "estrelas"
+            );
+
+
+        function criarEstrela() {
+
+            const estrela =
+                document.createElement(
+                    "div"
+                );
+
+
+            estrela.classList.add(
+                "estrela"
+            );
+
+
+            estrela.style.left =
+                Math.random() * 100 +
+                "vw";
+
+
+            estrela.style.top =
+                Math.random() * 100 +
+                "vh";
+
+
+            estrela.style.animationDelay =
+                Math.random() * 2 +
+                "s";
+
+
+            estrelas.appendChild(
+                estrela
+            );
+
+        }
+
+
+        for (
+            let i = 0;
+            i < 70;
+            i++
+        ) {
+
+            criarEstrela();
+
+        }
+
+
+        /* =========================
+           ELEMENTOS
+        ========================== */
+
+
+        const botaoSim =
+            document.getElementById(
+                "sim"
+            );
+
+
+        const botaoNao =
+            document.getElementById(
+                "nao"
+            );
+
+
+        const inicio =
+            document.getElementById(
+                "inicio"
+            );
+
+
+        const final =
+            document.getElementById(
+                "mensagem-final"
+            );
+
+
+        const iconeFinal =
+            document.getElementById(
+                "icone-final"
+            );
+
+
+        const tituloFinal =
+            document.getElementById(
+                "titulo-final"
+            );
+
+
+        const textoFinal =
+            document.getElementById(
+                "texto-final"
+            );
+
+
+        const textoFinal2 =
+            document.getElementById(
+                "texto-final-2"
+            );
+
+
+        const destaqueFinal =
+            document.getElementById(
+                "destaque-final"
+            );
+
+
+        const mensagemExtra =
+            document.getElementById(
+                "mensagem-extra"
+            );
+
+
+        /* =========================
+           MOSTRAR RESULTADO
+        ========================== */
+
+
+        function mostrarResultado(
+            tipo
+        ) {
+
+            inicio.style.display =
+                "none";
+
+
+            final.style.display =
+                "block";
+
+
+            /*
+             * SIM
+             */
+
+            if (tipo === "sim") {
+
+
+                iconeFinal.innerHTML =
+                    "💖";
+
+
+                tituloFinal.innerHTML =
+                    "Eu sabia! ❤️";
+
+
+                textoFinal.innerHTML = `
+
+                    Lara, obrigado por escolher viver
+                    esse momento comigo.
+
+                `;
+
+
+                textoFinal2.innerHTML = `
+
+                    Espero que a gente possa construir juntos
+                    muitas histórias, momentos inesquecíveis,
+                    risadas e memórias que vamos guardar
+                    para sempre.
+
+                `;
+
+
+                destaqueFinal.innerHTML = `
+
+                   (então né se puder enviar a resposta pq eu não consigo ver )
+
+                `;
+
+
+                mensagemExtra.innerHTML =
+                    "Eu gosto muito de você, Lara. ❤️";
+
+
+                /*
+                 * MAIS CORAÇÕES
+                 */
+
+                for (
+                    let i = 0;
+                    i < 60;
+                    i++
+                ) {
+
+                    setTimeout(
+                        criarCoracao,
+                        i * 60
+                    );
+
+                }
+
+            }
+
+
+            /*
+             * NÃO
+             */
+
+            else {
+
+
+                iconeFinal.innerHTML =
+                    "💗";
+
+
+                tituloFinal.innerHTML =
+                    "Tudo bem, Lara. ❤️";
+
+
+                textoFinal.innerHTML = `
+
+                    Obrigado por ser sincera comigo.
+
+                `;
+
+
+                textoFinal2.innerHTML = `
+
+                    Eu respeito a sua decisão e não quero
+                    que você se sinta pressionada.
+
+                    <br><br>
+
+                    Você é uma pessoa muito especial para mim,
+                    e independentemente da sua resposta,
+                    eu desejo que você seja feliz.
+                    (então né se puder enviar a resposta pq eu não consigo ver )
+
+                `;
+
+
+                destaqueFinal.innerHTML = `
+
+                    Às vezes, algumas histórias precisam
+                    de um pouco mais de tempo. ❤️
+
+                `;
+
+
+                mensagemExtra.innerHTML =
+                    "Obrigado por ter lido tudo até aqui. 💗";
+
+            }
+
+        }
+
+
+        /* =========================
+           BOTÃO SIM
+        ========================== */
+
+
+        botaoSim.addEventListener(
+            "click",
+            function() {
+
+                mostrarResultado(
+                    "sim"
+                );
+
+            }
+        );
+
+
+        /* =========================
+           BOTÃO NÃO
+        ========================== */
+
+
+        botaoNao.addEventListener(
+            "click",
+            function() {
+
+                mostrarResultado(
+                    "nao"
+                );
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
